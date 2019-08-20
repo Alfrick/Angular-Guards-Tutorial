@@ -118,7 +118,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 export class AppModule { } 
 
 ```
-We only need to import the components and configure their routes on the **app-routing.module.ts** file. Here is how we set up their routing:
+We only need to import the components and configure their routes on the **app-routing.module.ts** file. 
+
+Here is how we set up their routing:
 
 ```typescript
 /*app-routing.module.ts */
@@ -260,7 +262,7 @@ export class GuardsGuard implements CanActivate, CanActivateChild {
 ```
 
 ### Registration with AppModules
-After creating the authentication service and guard, let’s now register them in the app’s `AppModules` as providers. Whereas the Angular CLI registers components automatically, services need to be registered manually.
+After creating the authentication service and guard, let’s now register them in the app’s `AppModules` as providers. Whereas the Angular CLI registers components in the `AppModules` automatically, services need to be registered manually.
 
 ```typescript
 /* app.module.ts */
@@ -299,7 +301,8 @@ export class AppModule { }
 
 We are now good to go!
 ### Tying the guard to the route
-Finally, lets tie the guard to the route we want to safeguard from unauthorized access.
+Finally, let's tie the guard to the route we want to safeguard from unauthorized access.
+
 Here is how we apply it:
 
 ```typescript
@@ -343,7 +346,7 @@ Do you remember that we also wanted to ensure that only logged in users can acce
 
 We’ll use the `CanActivateChild` guard interface to help us achieve that possibility.
 
-Let’s start by adding a new `RouterOutlet` to the **dashboard.component.html **file:
+Let’s start by adding a new `RouterOutlet` to the **dashboard.component.html** file:
 
 ```typescript
 <!--dashboard.component.html-->
@@ -463,16 +466,20 @@ export class AppRoutingModule { }
 
 ```
 
+
 Now, here is what we’ll see if we visit [http://localhost:4200/dashboard/users]( http://localhost:4200/dashboard/users)  on the browser:
+
 
 ![](./images/image4.png)
 
 
-So, our guard ensures that only logged in users can access the **/dashboard/users** section of our app. To test this, we can go back into the `AuthenticationService` and change the return value of the `isLoggedIn` method to `false`, and any further attempts to access the URL will be denied.
+So, our guard ensures that only logged in users can access the **/dashboard/users** section of our app. 
+
+To test this, we can go back into the `AuthenticationService` and change the return value of the `isLoggedIn` method to `false`, and any further attempts to access the URL will be denied.
 ## Summary
 Angular route guards are great. They provide an efficient way of “guarding” certain routes and ensuring the safety of your application. In this tutorial, we’ve demonstrated how you can use `CanActivate` and `CanActivateChild` guard interfaces to control the navigation of users in a simple app.
 
-You can get the entire code used in this tutorial on this GitHub repository. 
+You can get the entire code used in this tutorial on [this GitHub repository](https://github.com/Alfrick/Angular-Guards-Tutorial.git). 
 
 Do you have any questions or comments?
 
