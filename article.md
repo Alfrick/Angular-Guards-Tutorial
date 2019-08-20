@@ -36,6 +36,7 @@ For the rest of this tutorial, we’ll only be talking about **CanActivate** and
 Here is what we want to achieve by the end of this tutorial:
 * Only admins can access the admin page at **/admin** section.
 * Only logged in users can access the **/dashboard/users** section.
+
 Now, let’s start getting our hands dirty!
 ## Creating a simple app
 After installing the Angular CLI, we’ll use it to create a simple app for demonstrating how to set up route guards on Angular applications.
@@ -46,7 +47,9 @@ Let’s run the following code on the command line interface:
 
 This will create a new app, with routing capabilities configured (if you agreed to enable routing during the installation process).
 
-The CLI also created an `AppComponent` that we’ll use as the home page (or the default route) for this simple application. Since we enabled routing during the installation process, the `AppComponent` came with a `RouterOutlet` ( `<router-outlet>` ) directive that acts as a placeholder for loading various components dynamically according to the activated component or the present route state.
+The CLI also created an `AppComponent` that we’ll use as the home page (or the default route) for this simple application. 
+
+Since we enabled routing during the installation process, the `AppComponent` came with a `RouterOutlet` ( `<router-outlet>` ) directive that acts as a placeholder for loading various components dynamically according to the activated component or the present route state.
 
 ```html
 <!--app.component.html-->
@@ -69,11 +72,14 @@ We’ll need our app to have the following pages:
 * users page
 * page-not-found page
 
-Let’s run the following codes to create those components under the **components ** folder:
+Let’s run the following codes to create those components under the **components** folder:
 
 `ng generate component components/admin`
+
 `ng generate component components/dashboard`
+
 `ng generate component components/users`
+
 `ng generate component components/page-not-found`
 
 Here is a screenshot showing the structure of our project on the Visual Studio Code editor:
