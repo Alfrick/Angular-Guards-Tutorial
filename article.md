@@ -61,7 +61,9 @@ Let’s run the following codes to create those components under the **component
 `ng generate component components/users`
 `ng generate component components/page-not-found`
 Here is a screenshot showing the structure of our project on the Visual Studio Code editor:
+
 ![](./images/image1.png)
+
 The Angular CLI will automatically include the generated components on the **app.module.ts** file, which is where the root module for our app resides.
 
 ```typescript
