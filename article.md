@@ -1,4 +1,4 @@
-![][./images/image1.png]
+![](./images/image1.png)
 
 # How to Use Guards to Protect Routes in Angular
 Angular routing plays a significant role in enabling navigation between pages, as users perform various tasks in an application. Furthermore, Angular provides route guards that you can use to add a layer of protection to your application and restrict users from accessing certain pages. For example, if you have an admin page at **/admin**, you can prevent a regular user from seeing that page.
