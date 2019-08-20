@@ -7,9 +7,10 @@ For example, if you have an admin page at **/admin**, you can prevent a regular 
 In this tutorial, we’re going to talk about how to use route guards to enhance the security of your Angular applications.
 ## Importance of protecting routes
 Angular route guards let you remove or grant access to certain aspects of the navigation—which increases the security of your application, instead of opening the doors to everyone, anytime.
+
 Here are some situations when determining how users can access certain pages is important:
 * If you want to prevent an unauthorized user from accessing the target page.
-* If you want to ensure that a user is logged in (authenticated) before accessing the page.
+* If you want to ensure that a user is logged-in (authenticated) before accessing the page.
 * If you want to fetch some data from an external source before showing it on the page.
 * If you want to ensure that the pending changes are saved before a user can leave a page.
 ## How to protect routes
@@ -19,6 +20,7 @@ Here are the five types of guard interfaces that you can include to your app’s
 3. **CanDeactivate**—adds a check for navigation away from the current route, such as leaving a page without filling the form.
 4. **Resolve**—adds a check for retrieving or loading route data before the route is activated.
 5. **CanLoad**—adds a check for navigating to a feature module that loaded asynchronously.
+
 A guard’s return value will determine what takes place to the router. Here are the possible behaviors:
 * If the return value is `true`, then the navigation proceeds.
 * If the return value is `false`, then the navigation halts, and the user is not directed anywhere else. It’s also possible that if the guard returns `false`, it can be tailored to instruct the router to navigate to another page, effectively nullifying the present navigation. 
@@ -321,7 +323,8 @@ Let’s imagine that an unauthenticated user wants to access the **/admin** page
  }
 
 ```
-Now, if we visit [http://localhost:4200/admin](http://localhost:4200/admin) on the browser, we’ll be redirected to [http://localhost:4200/404](http://localhost:4200/404) page.
+Now, if we visit [http://localhost:4200/admin](http://localhost:4200/admin) on the browser, we’ll be redirected to the [http://localhost:4200/404](http://localhost:4200/404) page.
+
 
 ![](./images/image3.png)
 
