@@ -61,7 +61,7 @@ Let’s run the following codes to create those components under the **component
 `ng generate component components/users`
 `ng generate component components/page-not-found`
 Here is a screenshot showing the structure of our project on the Visual Studio Code editor:
-![](.\images\image1.png)
+![](./images/image1.png)
 The Angular CLI will automatically include the generated components on the **app.module.ts** file, which is where the root module for our app resides.
 
 ```typescript
@@ -127,7 +127,7 @@ export class AppRoutingModule { }
 With the routing configuration above, for example, when the browser URL for this app becomes **/admin**, the router assigns that URL to the route path **/admin** and shows the `AdminComponent` as a sibling element to the `AppComponent`. Remember that we specified the `RouterOutlet` in the **app.component.html** file. 
 If we browse to [http://localhost:4200/admin](http://localhost:4200/admin), we’ll see a message at the bottom of the page that says **“admin-works!”**.
 
-![](.\images\image2.png)
+![](./images/image2.png)
 
 Until this point, anyone can access the **admin** page, which is undesirable, especially if the section contains some sensitive information that should only be displayed to the application’s administrators.
 Therefore, we’ll create route guards to prevent unauthorized users from accessing the **admin** page.
@@ -298,7 +298,7 @@ Let’s imagine that an unauthenticated user wants to access the **/admin** page
 ```
 Now, if we visit [http://localhost:4200/admin](http://localhost:4200/admin) on the browser, we’ll be redirected to [http://localhost:4200/404](http://localhost:4200/404) page.
 
-![](images\image3.png)
+![](./images/image3.png)
 
 Hurray!
 So, we’ve achieved our objective of ensuring that only authorized users can access the admin page at **/admin**. 
@@ -426,7 +426,9 @@ export class AppRoutingModule { }
 ```
 
 Now, here is what we’ll see if we visit [http://localhost:4200/dashboard/users]( http://localhost:4200/dashboard/users)  on the browser:
-![](.\images\image4.png)
+
+![](./images/image4.png)
+
 So, our guard ensures that only logged in users can access the **/dashboard/users** section of our app. To test this, we can go back into the `AuthenticationService` and change the return value of the `isLoggedIn` method to `false`, and any further attempts to access the URL will be denied.
 ## Summary
 Angular route guards are great. They provide an efficient way of “guarding” certain routes and ensuring the safety of your application. In this tutorial, we’ve demonstrated how you can use `CanActivate` and `CanActivateChild` guard interfaces to control the navigation of users in a simple app.
