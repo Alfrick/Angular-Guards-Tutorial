@@ -26,11 +26,13 @@ A guard’s return value will determine what takes place to the router. Here are
 * If the return value is `false`, then the navigation halts, and the user is not directed anywhere else. It’s also possible that if the guard returns `false`, it can be tailored to instruct the router to navigate to another page, effectively nullifying the present navigation. 
 
 To assist in establishing if a guard interface should allow or disallow an access request, a guard method can be called, with the following parameters passed:
-1.	**next: ActivatedRouteSnapshot** —the next route that will be activated in case the guard is permitting access. 
-2.	**state: RouterStateSnapshot** —the next router state in case the guard is permitting access.
-The guard method can return a **Promise** or **Observable** of a **Boolean** value. It can also return just a **Boolean** value itself. 
+1.	`next: ActivatedRouteSnapshot` —the next route that will be activated in case the guard is permitting access. 
+2.	`state: RouterStateSnapshot` —the next router state in case the guard is permitting access.
+
+The guard method can return a `Promise` or `Observable` of a `Boolean` value. It can also return just a `Boolean` value itself. 
 ## How to use route guards
 For the rest of this tutorial, we’ll only be talking about **CanActivate** and **CanActivateChild** guards. Eventually, after learning how to apply these two guards, you can use the same procedure to implement the other remaining ones in your Angular application.
+
 Here is what we want to achieve by the end of this tutorial:
 * Only admins can access the admin page at **/admin** section.
 * Only logged in users can access the **/dashboard/users** section.
